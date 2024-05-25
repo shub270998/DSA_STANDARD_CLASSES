@@ -9,7 +9,7 @@ class SegmentTree {
     
     SegmentTree(vector<int> input) {
         this->input.insert(this->input.begin(),input.begin(),input.end());
-        segmentTree.resize(2 * input.size() + 1, 0);
+        segmentTree.resize(4 * input.size() + 1, 0);
         build(0,0,input.size()-1);
     } 
     
@@ -67,6 +67,6 @@ class SegmentTree {
     
     void update(int index,int val) {
         input[index] = val;
-        updateQuery(0,0,arr.size(),index,val);
+        updateQuery(0,0,input.size()-1,index,val);
     }
 };
